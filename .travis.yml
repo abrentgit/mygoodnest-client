@@ -2,4 +2,11 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: tjpgbut9rRKteY7bSAg+WukcBB3tyEMZiB74ShS/AwXZ8KAxCoVT+kTgHCzaViwVy17N6HSFejHrm1TcPE8hqIqRdHT7tWrCISw2KBvASY+lBLzAichul00KGqbNAKq7KunFK34jNExPmj5SjSpfxw230OUnt4cJsf7MsMsrA0bd0+xizZXGeEwniM8CM14i05tDxHMutNnSk/9iFmS42ObJCGw3iUNLDBOj065IGXgpYrmqRjHy3a4+V3rcwxzClXXGkUdPfGTiHneVrG5SeT3lmqh9vpigUCpVRht2jKLiwtyjsDXI5GCViw7AELdzXuumReLh3OnWHdwA+H9/MwCZ7z6Z4tvBhTSZDsIHPrSBMm4pIgJTsZqEfN1H0bheOtegz3sbB9Ve8ScXpuohGOyYywtP3TwIrWeuquQOcwOa03InYJ4S6z7ZrgK9/5QVHsBtOl2uY82jCe9a/jlr36yukJiQsTvVqoLedTkBAbLJ+pRV0MnkK3su6kWvG476ZQser+PFx8aD5bXmPqCD/p+VHGbNFarhV0lhZAo8Sg7hZZkFa1xGt40GNRf6O6nBLgtwKouyCYVL4Xn1pO4tNYllfWt6vJnRzv2TxjW7tymawtKV4/UDdFNz/U2fOtJaDrDhypXKbxDkLdF9IX3MmXMfpud8+AiVdLYtbcnBwKY=
+  app: whispering-harbor-71370
+  on:
+    repo: abrentgit/mygoodnest-client
