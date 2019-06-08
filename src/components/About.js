@@ -1,11 +1,13 @@
 import React from 'react';
 
-function About() {
-  return (
-    <section>
-      <h2> What is Wellnest? </h2>
-    </section>
-  );
+class About extends React.Component {
+  render() {
+    return (
+      <section>
+        <h2> What is Well Nest? </h2>
+      </section>
+    );
+  }
 }
 
 export default About;

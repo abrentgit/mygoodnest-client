@@ -1,11 +1,13 @@
 import React from 'react';
 
-function Feature() {
-  return (
-    <section>
-      <h2>How Wellnest Helps</h2>
-    </section>
-  );
+class Feature extends React.Component {
+  render() {
+    return (
+      <section>
+        <h2>How Well Nest Helps</h2>
+      </section>
+    );
+  }
 }
 
 export default Feature;
