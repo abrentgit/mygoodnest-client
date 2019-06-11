@@ -3,6 +3,7 @@ import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import Home from './Home';
 import Login from './Login';
 import Contact from './Contact';
+import Register from './Register';
 
 class App extends React.Component {
   render() {
@@ -24,6 +25,7 @@ class App extends React.Component {
           <div className="content" />
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="/contact" component={Contact} />
         </div>
       </BrowserRouter>
