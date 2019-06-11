@@ -1,5 +1,4 @@
 import React from 'react';
-import Contact from './Contact';
 import About from './About';
 
 class Home extends React.Component {
@@ -7,7 +6,6 @@ class Home extends React.Component {
     return (
       <div>
         <About />
-        <Contact />
       </div>
     );
   }

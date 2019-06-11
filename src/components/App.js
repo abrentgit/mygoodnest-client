@@ -18,9 +18,6 @@ class App extends React.Component {
             <li>
               <NavLink to="/login">Login</NavLink>
             </li>
-            <li>
-              <NavLink to="/contact">Contact</NavLink>
-            </li>
           </ul>
           <div className="content" />
           <Route exact path="/" component={Home} />
