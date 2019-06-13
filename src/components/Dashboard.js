@@ -1,5 +1,7 @@
 import React from 'react';
 
+// MOOD REPORT PROMPTS AT DASH
+
 export class Dashboard extends React.Component {
   render() {
     return (
@@ -34,5 +36,3 @@ export class Dashboard extends React.Component {
     );
   }
 }
-
-// export Dashboard default;
