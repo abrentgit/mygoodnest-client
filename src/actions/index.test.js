@@ -1,12 +1,12 @@
 // WHAT SHOULD THE OBJECT LOOK LIKE?
 
-import GET_PRACTICES from './index';
+import GET_PRACTICES, { getPractices } from './index';
 
 describe('getPractices', () => {
     it('Should return practices', () => {
-        const title = 'List title';
-        const action = addList(title);
-        expect(action.type).toEqual(ADD_LIST);
-        expect(action.title).toEqual(title);
+        const practice = 'List Practice';
+        const action = getPractices(practice);
+        expect(action.type).toEqual(GET_PRACTICES);
+        expect(action.practice).toEqual(practice);
     });
 });
