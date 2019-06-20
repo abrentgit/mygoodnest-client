@@ -25,7 +25,7 @@ export class Dashboard extends React.Component {
           </select>
         </label>
         <label>
-          <div>What self-care if any have you done today?</div>
+          <div>What self-care practices if any have you done today?</div>
           <input type="checkbox" name="selfcare1" value="Yoga"> Yoga<br>
           <input type="checkbox" name="selfcare2" value="Meditation"> Meditation<br>
           <input type="checkbox" name="selfcare3" value="Exercise"> Exercise<br>
