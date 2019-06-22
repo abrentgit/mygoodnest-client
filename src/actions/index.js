@@ -12,12 +12,12 @@ export const getEntry = entry => ({
     entry
 })
 
-// get users
+// get entries
 
-export const GET_USERS = 'GET_USERS';
-export const getUsers = user => ({
-    type: GET_USERS,
-    user
+export const GET_ENTRIES = 'GET_ENTRIES';
+export const getEntries = entry => ({
+    type: GET_ENTRIES,
+    entry
 })
 
 // loginuser
@@ -27,8 +27,6 @@ export const loginUser = user => ({
     type: LOGIN_USER,
     user
 })
-
-// registeruser
 
 export const REGISTER_USER = 'REGISTER_USER';
 export const registerUser = user => ({
