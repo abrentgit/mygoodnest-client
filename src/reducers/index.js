@@ -12,3 +12,4 @@ export const practicesReducer = (state = initialState, action) => {
     }
     return state;
 }
+
