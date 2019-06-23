@@ -1,68 +1,5 @@
-import { GET_PRACTICES, getPractices } from "../actions";
-import { practicesReducer } from ".";
-
-// NEED TO IMPLEMENT REDUCER HERE
-
-
-// describe('should get practices', () => {
-//     it('should return the initial state', () => {
-
-//         const practiceName3One = 'Yoga';
-//         const practiceNameTwo = 'Meditation'
-
-//         const practiceOne = {
-//             name: practiceNameOne
-//         }
-//         const practicerTwo = {
-//             name: practiceNameTwo
-//         }
-//         let state = {
-//             practices: [practiceOne, practicerTwo]
-//         };
-
-//         const entryOne = {
-//             user: 'User One',
-//             mood: 'Awesome',
-//             hours: '8-10',
-//             practices: ['Yoga',
-//                 'Meditation'
-//             ],
-//             content: 'The sun shined today. It was fab.',
-//             date: '2019-11-12'
-//         };
-
-//         const entryTwo = {
-//             user: 'User One',
-//             mood: 'Awesome',
-//             hours: '8-10',
-//             practices: ['Yoga',
-//                 'Meditation'
-//             ],
-//             content: 'The sun shined today. It was fab.',
-//             date: '2019-11-12'
-//         };
-
-//         expect(state).toEqual({
-//             practices: [
-//                 {
-//                     name: practiceNameOne
-//                 },
-//                 {
-//                     name: practiceNameTwo
-//                 }
-//             ]
-//         })
-//     })
-//     it('should return single entry', () => {
-//         expect(state).toEqual({
-
-//         })
-//     })
-
-// })
-
-/// SAMPLE REDUCER TEST
-
+import { getPractices, getEntries, getEntry } from "../actions";
+import { practicesReducer, entryReducer, entriesReducer } from './index';
 
 describe('practices reducer', () => {
 
@@ -82,6 +19,61 @@ describe('practices reducer', () => {
         });
     });
 });
+
+describe('entry reducer', () => {
+    it('should return current state on unknown action', () => {
+        let currentState = {};
+        const state = entryReducer(currentState, { type: '_UNKNOWN' });
+        expect(state).toBe(currentState);
+    });
+
+    describe('get Entry', () => {
+        it('should get entry', () => {
+            let state;
+            state = entryReducer(state, getEntry({ type: 'GET_ENTRY' }));
+            expect(state).toEqual({
+                mood: 'Good',
+                hours: '8-10',
+                practices: ['Yoga', 'Meditation'],
+                content: 'Today I went sailing',
+                date: '2019-12-12'
+            })
+        })
+    })
+})
+
+////
+
+describe('entries reducer', () => {
+    it('should return current state on unknown action', () => {
+        let currentState = {};
+        const state = entriesReducer(currentState, { type: '_UNKNOWN' });
+        expect(state).toBe(currentState);
+    });
+
+//     describe('get entries', () => {
+//         it('should get entry', () => {
+//             let state;
+//             let entryOne = {
+//                 "content": "Today I went sailing", "date": "2019-12-12", "hours": "8-10", "mood": "Good", "practices": ["Yoga", "Exercise"]
+//             }
+//                 let entryTwo = 
+//                 { "content": "Today has been rough", "date": "2019-12-13", "hours": "0-4", "mood": "Bad", "practices": ["Meditation", "Walking"]};
+
+//                 state = entriesReducer(state, getEntries({ type: 'GET_ENTRIES' }));
+//                 expect(state).toEqual({
+//                     [entryOne, entryTwo]
+//                 })
+//             })
+//     })
+// })
+
+
+
+
+
+
+
 
 
 
