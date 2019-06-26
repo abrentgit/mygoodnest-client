@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
+  state = {
+
+  }
   render() {
     return (
       <form>
@@ -14,9 +16,6 @@ class Login extends React.Component {
           <input type="text" name="password" required />
         </label>
         <input type="submit" value="Submit" />
-        <p>
-          Don't have an account? <Link to="/register">Sign up.</Link>
-        </p>
       </form>
     );
   }
