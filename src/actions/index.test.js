@@ -1,29 +1,11 @@
 
-import { GET_PRACTICES, getPractices, GET_ENTRY, getEntry, GET_ENTRIES, getEntries, LOGIN_USER, loginUser, REGISTER_USER, registerUser } from './index';
+import { ADD_ENTRY, addEntry, LOGIN_USER, loginUser, REGISTER_USER, registerUser } from './index';
 
-describe('getPractices', () => {
-    it('Should return practices', () => {
-        const practice = 'List Practice';
-        const action = getPractices(practice);
-        expect(action.type).toEqual(GET_PRACTICES);
-        expect(action.practice).toEqual(practice);
-    });
-});
-
-describe('getEntry', () => {
+describe('addEntry', () => {
     it('should get a single entry', () => {
         const entry = 'List Entry';
-        const action = getEntry(entry);
-        expect(action.type).toEqual(GET_ENTRY);
-        expect(action.entry).toEqual(entry);
-    })
-})
-
-describe('getEntries', () => {
-    it('should get all entries', () => {
-        const entry = 'List Entries';
-        const action = getEntries(entry);
-        expect(action.type).toEqual(GET_ENTRIES);
+        const action = addEntry(entry);
+        expect(action.type).toEqual(ADD_ENTRY);
         expect(action.entry).toEqual(entry);
     })
 })

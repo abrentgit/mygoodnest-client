@@ -1,29 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Route, NavLink } from 'react-router-dom';
-import Home from './Home';
-import Login from './Login';
-import Contact from './Contact';
-import Register from './Register';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import NavBar from './NavBar';
+import { Dashboard } from './Dashboard';
+import SingleEntry from './SingleEntry';
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <h1>Well Nest</h1>
-          <ul className="header">
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
-          </ul>
-          <div className="content" />
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/contact" component={Contact} />
+        <div className="App">
+          <NavBar />
+          <Switch>
+            <Route exact path='/' component={Dashboard} />
+            <Route path='/entries/:id' component={SingleEntry} />
+          </Switch>
         </div>
       </BrowserRouter>
     );

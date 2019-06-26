@@ -1,5 +1,6 @@
-import { createStore } from 'redux';
+// import { createStore, combineReducers, applyMiddleware } from 'redux';
+// import reducers from './reducers';
 
-import reducers from './reducers';
+// // // const store = createStore(reducers);
 
-export default createStore(reducers);
+// // export default createStore(reducers)

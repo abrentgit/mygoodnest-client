@@ -1,66 +1,44 @@
-import GET_PRACTICES, { GET_ENTRY, GET_ENTRIES } from '../actions/index';
+// // import { REGISTER_USER } from '../actions/index';
 
-const initialState = {
-    practices: []
-};
+// // const initialState = {
+// //     result: 1,
+// //     role: '',
+// //     name: '',
+// //     email: '',
+// //     password: ''
+// // }
 
-const entryTest = {
-    mood: 'Good',
-    hours: '8-10',
-    practices: ['Yoga', 'Meditation'],
-    content: 'Today I went sailing',
-    date: '2019-12-12'
-}
+// // const entryTest = {
+// //     mood: 'Good',
+// //     hours: '8-10',
+// //     practices: ['Yoga', 'Meditation'],
+// //     content: 'Today I went sailing',
+// //     date: '2019-12-12'
+// // }
 
-const entriesTest = [{
+// // export const entryReducer = (state = entryTest, action) => {
 
-    mood: 'Good',
-    hours: '8-10',
-    practices: ['Yoga', 'Meditation'],
-    content: 'Today I went sailing',
-    date: '2019-12-12',
-},
-{
-    mood: 'Bad',
-    hours: '0-4',
-    practices: ['Meditation', 'Walking'],
-    content: 'Today has been rough',
-    date: '2019-12-13'
+// //     if (action.type === ADD_ENTRY) {
+// //         return Object.assign({}, state, {
+// //             entry: state.entry.concat(action.payload)
+// //         });
+// //     }
+// //     return state;
+// // }
 
-}
-]
+// /// DONE 
+// // register user
 
-export const practicesReducer = (state = initialState, action) => {
+// export const registerReducer = (state = initialState, action) => {
 
-    if (action.type === GET_PRACTICES) {
-        return Object.assign({}, state, {
-            practices: state.practices.concat(action.payload)
-        });
-    }
-    return state;
-}
+//     if (action.type === REGISTER_USER) {
+//         return Object.assign({}, state, {
+//             user: state.user.concat(action.payload)
+//         });
+//     }
+//     return state;
+// }
 
-export const entryReducer = (state = entryTest, action) => {
-
-    if (action.type === GET_ENTRY) {
-        return Object.assign({}, state, {
-            entry: state.entry.concat(action.payload)
-        });
-    }
-    return state;
-}
-
-/// DONE 
-
-// FOCUS ON THIS ONE
-
-export const entriesReducer = (state = entriesTest, action) => {
-
-    if (action.type === GET_ENTRIES) {
-        return Object.assign({}, state, {
-            entries: state.entries.concat(action.payload)
-        });
-    }
-    return state;
-}
-
+// // store.subscribe(() => {
+// //     console.log('Store updated', store.getState())
+// // })

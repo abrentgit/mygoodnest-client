@@ -1,26 +1,8 @@
-export const GET_PRACTICES = 'GET_PRACTICES';
-export const getPractices = practice => ({
-    type: GET_PRACTICES,
-    practice
-});
-
-// get entry 
-
-export const GET_ENTRY = 'GET_ENTRY';
-export const getEntry = entry => ({
-    type: GET_ENTRY,
+export const ADD_ENTRY = 'ADD_ENTRY';
+export const addEntry = entry => ({
+    type: ADD_ENTRY,
     entry
 })
-
-// get entries
-
-export const GET_ENTRIES = 'GET_ENTRIES';
-export const getEntries = entry => ({
-    type: GET_ENTRIES,
-    entry
-})
-
-// loginuser
 
 export const LOGIN_USER = 'LOGIN_USER';
 export const loginUser = user => ({
