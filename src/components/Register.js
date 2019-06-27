@@ -31,7 +31,7 @@ class Register extends React.Component {
             Password:
           <input type="text" name="password" onChange={this.handleChange} required />
           </label>
-          <button className="form-btn">Register</button>
+          <button className="form-btn">Submit</button>
         </form>
       </div>
     );

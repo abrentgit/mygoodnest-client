@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
-import Login from './Login';
 
 const Navigation = () => {
   return (
@@ -13,7 +12,6 @@ const Navigation = () => {
         </Link>
         <SignedInLinks />
         <SignedOutLinks />
-        <Route exact path="/login" component={Login} />
       </div>
     </nav>
   );
