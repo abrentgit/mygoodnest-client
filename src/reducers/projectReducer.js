@@ -1,3 +1,11 @@
+const initialState = {};
+
+const projectReducer = (state = initialState, action) => {
+    return state
+}
+
+export default projectReducer;
+
 // // import { REGISTER_USER } from '../actions/index';
 
 // // const initialState = {
@@ -16,7 +24,7 @@
 // //     date: '2019-12-12'
 // // }
 
-// // export const entryReducer = (state = entryTest, action) => {
+// // export const projectReducer = (state = entryTest, action) => {
 
 // //     if (action.type === ADD_ENTRY) {
 // //         return Object.assign({}, state, {

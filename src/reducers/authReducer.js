@@ -1,4 +1,10 @@
-const authReducer = () =>
+const initialState = {};
+
+const authReducer = (state = initialState, action) => {
+    return state;
+}
+
+export default authReducer;
 
 
 // // import { REGISTER_USER } from '../actions/index';
