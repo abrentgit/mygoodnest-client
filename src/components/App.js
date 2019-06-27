@@ -4,6 +4,9 @@ import NavBar from './NavBar';
 import { Dashboard } from './Dashboard';
 import SingleEntry from './SingleEntry';
 import Login from './Login';
+import Register from './Register';
+import EntryForm from './EntryForm';
+import About from './About'
 
 class App extends React.Component {
   render() {
@@ -15,6 +18,9 @@ class App extends React.Component {
             <Route exact path='/' component={Dashboard} />
             <Route path='/entries/:id' component={SingleEntry} />
             <Route path='/login' component={Login} />
+            <Route path='/register' component={Register} />
+            <Route path='/create' component={EntryForm} />
+            <Route path='/about' component={About} />
           </Switch>
         </div>
       </BrowserRouter>
