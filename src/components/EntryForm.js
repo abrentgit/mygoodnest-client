@@ -1,18 +1,8 @@
 import React from 'react';
+// import { createEntry } from '../actions';
+// import { connect } from 'react';
 
-class EntryForm extends React.Component {
-  state = {
-    content: ''
-  }
-  handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value
-    })
-  }
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state);
-  }
+export class EntryForm extends React.Component {
   render() {
     return (
       <div>
@@ -29,9 +19,3 @@ class EntryForm extends React.Component {
 }
 
 export default EntryForm;
-
-
-
-// use this implementation for after
-//* <form onSubmit={this.handleSubmit}>
-

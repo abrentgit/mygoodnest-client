@@ -1,11 +1,10 @@
 import React from 'react';
 import Quote from './Quote';
 import EntryForm from './EntryForm';
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 export class Dashboard extends React.Component {
   render() {
-    console.log(this.props, 'this is props on dash')
     return (
       <div className="dashboard-container">
         <div className="quote-container">
@@ -19,10 +18,10 @@ export class Dashboard extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    quotes: state.quotes.quotes
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     entries: state.entries.entries
+//   }
+// }
 
-export default connect(mapStateToProps)(Dashboard);
+// export default connect(mapStateToProps)(Dashboard);

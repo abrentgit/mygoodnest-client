@@ -1,10 +1,20 @@
-const initialState = {};
+// const initialState = {
+//     entries: [
+//         { id: '1', user: 'John Wick', date: 'April 30th, 2020', content: 'The birds are rare tonight' },
+//         { id: '2', user: 'Anthony James', date: 'May 30th, 2020', content: 'The songs are so fresh' },
+//         { id: '3', user: 'Bill Peters', date: 'March 30th, 2020', content: 'The wind is so good' }
+//     ]
+// };
 
-const projectReducer = (state = initialState, action) => {
-    return state
-}
+// const entryReducer = (state = initialState, action) => {
+//     switch (action.type) {
+//         case 'CREATE_ENTRY':
+//             console.log('created entry working', action.entry)
+//     }
+//     return state
+// }
 
-export default projectReducer;
+// export default entryReducer;
 
 // // import { REGISTER_USER } from '../actions/index';
 
@@ -24,7 +34,7 @@ export default projectReducer;
 // //     date: '2019-12-12'
 // // }
 
-// // export const projectReducer = (state = entryTest, action) => {
+// // export const entryReducer = (state = entryTest, action) => {
 
 // //     if (action.type === ADD_ENTRY) {
 // //         return Object.assign({}, state, {
