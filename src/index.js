@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from 'react-router-dom';
+// import { Router } from 'react-router-dom';
 // import { createStore, applyMiddleware } from 'redux';
 // import { Provider } from 'react-redux';
 import App from './components/App';
@@ -8,6 +8,6 @@ import App from './components/App';
 // import store from './store';
 import './index.css';
 
-ReactDOM.render(<Router><App /></Router>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // const store = createStore(store, applyMiddleware(thunk));

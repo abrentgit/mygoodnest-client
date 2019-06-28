@@ -3,20 +3,34 @@ import React from 'react';
 import NavBar from './NavBar';
 // import { Dashboard } from './Dashboard';
 // import SingleEntry from './SingleEntry';
-// import Login from './Login';
-// import Register from './Register';
+import Login from './Login';
+import Register from './Register';
 // import EntryForm from './EntryForm';
-// import About from './About'
+import About from './About'
+import Home from './Home';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <NavBar />
-      </div>
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
+
+//<BrowserRouter>
+//<Route exact path="/" component={Home} />
+// </BrowserRouter>
 
 //* <Route path='/create' component={EntryForm} />
 // <Route path='/about' component={About} /> 

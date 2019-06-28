@@ -1,20 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import SignedInLinks from './SignedInLinks';
-// import SignedOutLinks from './SignedOutLinks';
+// import Login from './Login';
+// import Register from './Register'
 
-const Navigation = () => {
+const NavBar = () => {
   return (
-    <nav className="nav-wrapper">
-      <div className="menu-container">
-        <h1 className="home-title">Goodnest</h1>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/register">Register</Link></li>
-      </div>
-    </nav>
+    <div className="nav-wrapper">
+      <nav className="menu-container">
+        <h3>Logo Holder</h3>
+        <ul className="nav-links">
+          <li><Link to="/login">Login</Link></li>
+          <li><Link to="/register">Register</Link></li>
+          <li><Link to="/about">About</Link></li>
+        </ul>
+      </nav>
+    </div>
   );
 };
 
-//* <SignedInLinks /><SignedOutLinks /> */
+/* <Route exact path='/login' component={Login} />
+          <Route exact path='/register' component={Register} /> */
 
-export default Navigation;
+
+
+export default NavBar;

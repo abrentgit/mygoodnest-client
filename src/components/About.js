@@ -4,7 +4,7 @@ class About extends React.Component {
   render() {
     return (
       <section>
-        <h2> What is Well Nest? </h2>
+        <h2> What is Grateful Nest? </h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat
