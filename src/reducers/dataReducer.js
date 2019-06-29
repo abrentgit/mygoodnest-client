@@ -25,7 +25,7 @@ const initialState = {
 export default function reducer(state = initialState, action) {
     if (action.type === POST_ENTRY_SUCCESS) {
         return Object.assign({}, state, {
-            date: action.data,
+            entry: action.data,
             error: null
         });
     } else if (action.type === POST_ENTRY_ERROR) {
@@ -34,7 +34,7 @@ export default function reducer(state = initialState, action) {
         });
     } else if (action.type === GET_MY_ENTRIES_SUCCESS) {
         return Object.assign({}, state, {
-            dates: action.data,
+            entries: action.data,
             error: null
         });
     } else if (action.type === GET_MY_ENTRIES_ERROR) {
@@ -43,7 +43,7 @@ export default function reducer(state = initialState, action) {
         });
     } else if (action.type === GET_ENTRY_SUCCESS) {
         return Object.assign({}, state, {
-            dates: action.data,
+            entry: action.data,
             error: null
         });
     } else if (action.type === GET_ENTRY_ERROR) {
@@ -52,7 +52,7 @@ export default function reducer(state = initialState, action) {
         });
     } else if (action.type === DELETE_ENTRY_SUCCESS) {
         return Object.assign({}, state, {
-            dates: action.data,
+            entry: action.data,
             error: null
         });
     } else if (action.type === DELETE_ENTRY_ERROR) {
@@ -61,7 +61,7 @@ export default function reducer(state = initialState, action) {
         });
     } else if (action.type === GET_QUOTE_SUCCESS) {
         return Object.assign({}, state, {
-            dates: action.data,
+            quote: action.data,
             error: null
         });
     } else if (action.type === GET_QUOTE_ERROR) {

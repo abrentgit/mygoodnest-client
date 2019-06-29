@@ -1,11 +1,10 @@
-'use strict';
 
 // import authReducer from './authReducer';
-import dataReducer, { initialState } from './dataReducer';
+import reducer, { initialState } from './dataReducer';
 
 describe('data reducer', () => {
     it('should return the initial state', () => {
-        expect(dataReducer(undefined, {})).toEqual(initialState)
+        expect(reducer(undefined, {})).toEqual(initialState)
     })
 });
 
