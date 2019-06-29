@@ -1,53 +1,37 @@
-const initialState = {};
+import { SET_AUTH_TOKEN, CLEAR_AUTH, AUTH_REQUEST, AUTH_SUCCESS, AUTH_ERROR } from '.. actions/index';
 
-const authReducer = (state = initialState, action) => {
+const initialState = {
+    authToken: null,
+    currentUser: null,
+    loading: false,
+    error: null
+};
+
+export default function reducer(state = initialState, action) {
+    if (action.type === SET_AUTH_TOKEN) {
+        return Object.assign({}, state, {
+            authToken: action.authToken
+        });
+    } else if (action.type === CLEAR_AUTH) {
+        return Object.assign({}, state, {
+            authToken: null,
+            currentUser: null
+        });
+    } else if (action.type === AUTH_REQUEST) {
+        return Object.assign({}, state, {
+            loading: true,
+            error: null
+        });
+    } else if (action.type === AUTH_SUCCESS) {
+        return Object.assign({}, state, {
+            loading: false,
+            currentUser: action.currentUser
+        });
+    } else if (action.type === AUTH_ERROR) {
+        return Object.assign({}, state, {
+            loading: false,
+            error: action.error
+        });
+    }
     return state;
 }
-
-export default authReducer;
-
-
-// // import { REGISTER_USER } from '../actions/index';
-
-// // const initialState = {
-// //     result: 1,
-// //     role: '',
-// //     name: '',
-// //     email: '',
-// //     password: ''
-// // }
-
-// // const entryTest = {
-// //     mood: 'Good',
-// //     hours: '8-10',
-// //     practices: ['Yoga', 'Meditation'],
-// //     content: 'Today I went sailing',
-// //     date: '2019-12-12'
-// // }
-
-// // export const entryReducer = (state = entryTest, action) => {
-
-// //     if (action.type === ADD_ENTRY) {
-// //         return Object.assign({}, state, {
-// //             entry: state.entry.concat(action.payload)
-// //         });
-// //     }
-// //     return state;
-// // }
-
-// /// DONE 
-// // register user
-
-// export const registerReducer = (state = initialState, action) => {
-
-//     if (action.type === REGISTER_USER) {
-//         return Object.assign({}, state, {
-//             user: state.user.concat(action.payload)
-//         });
-//     }
-//     return state;
-// }
-
-// // store.subscribe(() => {
-// //     console.log('Store updated', store.getState())
-// // })

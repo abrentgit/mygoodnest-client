@@ -5,10 +5,9 @@ import NavBar from './NavBar';
 // import SingleEntry from './SingleEntry';
 import Login from './Login';
 import Register from './Register';
-// import EntryForm from './EntryForm';
 import About from './About'
 import Home from './Home';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';;
 
 class App extends React.Component {
   render() {
