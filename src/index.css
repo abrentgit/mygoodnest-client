@@ -28,6 +28,11 @@ nav {
   list-style: none;
 }
 
+.entry-box {
+  width: 500px;
+  height: 200px;
+}
+
 /* .logo-home {
   display: block;
   color: white;

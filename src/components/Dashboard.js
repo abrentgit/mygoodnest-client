@@ -3,7 +3,7 @@ import Quote from './Quote';
 import EntryForm from './EntryForm';
 // import { connect } from 'react-redux'
 
-export class Dashboard extends React.Component {
+class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard-container">
@@ -17,6 +17,8 @@ export class Dashboard extends React.Component {
     );
   }
 }
+
+export default Dashboard;
 
 // const mapStateToProps = (state) => {
 //   return {

@@ -9,9 +9,9 @@ export class EntryForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <h2>What are you grateful for today?</h2>
           <label>
-            <input type="text" name="entry-text" onChange={this.handleChange} />
+            <input className="entry-box" type="text" name="entry-text" onChange={this.handleChange} />
           </label>
-          <button className="form-btn">Register</button>
+          <button className="form-btn">Submit</button>
         </form>
       </div>
     );
