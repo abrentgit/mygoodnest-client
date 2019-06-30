@@ -10,3 +10,30 @@
 // })
 
 // export default store;
+
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
+import thunk from 'redux-thunk';
+import { loadAuthToken } from './localStorage';
+import authReducer from './reducers/authReducer';
+import dataReducer from './reducers/dataReducer';
+import { setAuthToken, refreshAuthToken } from './actions/auth';
+
+
+const store = createStore(
+    combineReducers({
+        form: formReducer,
+        auth: authReducer,
+        protectedData: dataReducer
+    }),
+    applyMiddleware(thunk)
+);
+
+const authToken = loadAuthToken();
+if (authToken) {
+    const token = authToken;
+    store.dispatch(setAuthToken(token));
+    store.dispatch(refreshAuthToken());
+}
+
+export default store;

@@ -8,7 +8,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        <h3>GoodNest</h3>
+        <h3>Welcome to Goodnest my user friend</h3>
       </div>
     )
   }

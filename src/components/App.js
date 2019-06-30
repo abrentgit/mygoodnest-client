@@ -1,7 +1,7 @@
 import React from 'react';
 // import { BrowserRouter } from 'react-router-dom';
 import NavBar from './NavBar';
-import Dashboard from './Dashboard';
+// import Dashboard from './Dashboard';
 import Login from './Login';
 import Register from './Register';
 import About from './About'
@@ -20,7 +20,6 @@ class App extends React.Component {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
           </Switch>
-          <Dashboard />
         </div>
       </Router>
     );

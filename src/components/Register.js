@@ -1,27 +1,13 @@
 import React from 'react';
 
 class Register extends React.Component {
-  state = {
-    name: '',
-    email: '',
-    password: ''
-  }
-  handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value
-    })
-  }
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state);
-  }
   render() {
     return (
       <div className="register">
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <label>
             Name:
-          <input type="text" name="name" onChange={this.handleChange} required />
+          <input type="text" name="name" required />
           </label>
           <label>
             Email:

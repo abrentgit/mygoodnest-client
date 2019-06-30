@@ -61,7 +61,7 @@ export default function reducer(state = initialState, action) {
         });
     } else if (action.type === GET_QUOTE_SUCCESS) {
         return Object.assign({}, state, {
-            quote: action.data,
+            quotes: action.data,
             error: null
         });
     } else if (action.type === GET_QUOTE_ERROR) {
