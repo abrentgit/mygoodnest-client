@@ -33,6 +33,10 @@ nav {
   height: 200px;
 }
 
+.logout {
+  font-size: 18px;
+}
+
 /* .logo-home {
   display: block;
   color: white;

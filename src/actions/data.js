@@ -1,6 +1,37 @@
-/// CHECK PROTECTED DATA JS VERSUS THIS FILE
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
+
+// AUTH 
+
+export const FETCH_PROTECTED_DATA_SUCCESS = 'FETCH_PROTECTED_DATA_SUCCESS';
+export const fetchProtectedDataSuccess = data => ({
+    type: FETCH_PROTECTED_DATA_SUCCESS,
+    data
+});
+
+export const FETCH_PROTECTED_DATA_ERROR = 'FETCH_PROTECTED_DATA_ERROR';
+export const fetchProtectedDataError = error => ({
+    type: FETCH_PROTECTED_DATA_ERROR,
+    error
+});
+
+export const fetchProtectedData = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/protected`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(({ data }) => dispatch(fetchProtectedDataSuccess(data)))
+        .catch(err => {
+            dispatch(fetchProtectedDataError(err));
+        });
+};
+
+// ENTRIES ACTIONS
 
 export const POST_ENTRY_SUCCESS = 'POST_DATE_SUCCESS';
 export const postEntrySuccess = data => ({
@@ -50,6 +81,8 @@ export const deleteEntryError = error => ({
     error
 });
 
+// QUOTES ACTIONS
+
 export const GET_QUOTE_SUCCESS = 'GET_MY_DATES_SUCCESS';
 export const getQuoteSuccess = data => ({
     type: GET_QUOTE_SUCCESS,
@@ -61,6 +94,8 @@ export const getQuoteError = error => ({
     type: GET_QUOTE_ERROR,
     error
 });
+
+// DISPATCHES
 
 export const getEntries = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;

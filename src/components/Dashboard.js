@@ -1,29 +1,9 @@
-// import React from 'react';
-// import Quote from './Quote';
-// import EntryForm from './EntryForm';
-// // import { connect } from 'react-redux'
-
-// class Dashboard extends React.Component {
-//   render() {
-//     return (
-//       <div className="dashboard-container">
-//         <div className="quote-container">
-//           <Quote />
-//           <div className="entry-form-container">
-//             <EntryForm />
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Dashboard;
+// GET ENTRIES, GET QUOTES ONCE YOU HIT DASHBOARD
 
 import React from 'react';
 import { connect } from 'react-redux';
-import requiresLogin from './requires-login';
-import { fetchProtectedData } from '../actions/protected-data';
+import RequiresLogin from './RequiresLogin';
+import { fetchProtectedData } from '../actions/data';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -49,9 +29,9 @@ const mapStateToProps = state => {
   const { currentUser } = state.auth;
   return {
     email: state.auth.currentUser.email,
-    name: `${currentUser.firstName} ${currentUser.lastName}`,
+    name: `${currentUser.name}`,
     protectedData: state.protectedData.data
   };
 };
 
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+export default RequiresLogin()(connect(mapStateToProps)(Dashboard));
