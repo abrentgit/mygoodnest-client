@@ -1,27 +1,63 @@
 import React from 'react';
+import { Field, reduxForm, focus } from 'redux-form';
+import { registerUser } from '../actions/registerUser';
+import { login } from '../actions/auth';
+import Input from './Input';
+import { required, nonEmpty, matches, length, isTrimmed } from './Validators';
+const passwordLength = length({ min: 10, max: 72 });
+const matchesPassword = matches('password');
 
-class Register extends React.Component {
+export class RegistrationForm extends React.Component {
+  onSubmit(values) {
+    const { email, password, name } = values;
+    const user = { email, password, name };
+    return this.props
+      .dispatch(registerUser(user))
+      .then(() => this.props.dispatch(login(email, password)));
+  }
+
   render() {
     return (
-      <div className="register">
-        <form>
-          <label>
-            Name:
-          <input type="text" name="name" required />
-          </label>
-          <label>
-            Email:
-          <input type="text" name="email" onChange={this.handleChange} required />
-          </label>
-          <label>
-            Password:
-          <input type="text" name="password" onChange={this.handleChange} required />
-          </label>
-          <button className="form-btn">Submit</button>
-        </form>
-      </div>
+      <form
+        className="login-form"
+        onSubmit={this.props.handleSubmit(values =>
+          this.onSubmit(values)
+        )}>
+        <label htmlFor="name">Name</label>
+        <Field component={Input} type="text" name="name" />
+        <label htmlFor="email">Email</label>
+        <Field
+          component={Input}
+          type="text"
+          name="email"
+          validate={[required, nonEmpty, isTrimmed]}
+        />
+        <label htmlFor="password">Password</label>
+        <Field
+          component={Input}
+          type="password"
+          name="password"
+          validate={[required, passwordLength, isTrimmed]}
+        />
+        <label htmlFor="passwordConfirm">Confirm password</label>
+        <Field
+          component={Input}
+          type="password"
+          name="passwordConfirm"
+          validate={[required, nonEmpty, matchesPassword]}
+        />
+        <button
+          type="submit"
+          disabled={this.props.pristine || this.props.submitting}>
+          Register
+                </button>
+      </form>
     );
   }
 }
 
-export default Register;
+export default reduxForm({
+  form: 'registration',
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus('registration', Object.keys(errors)[0]))
+})(RegistrationForm);

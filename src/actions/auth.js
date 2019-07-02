@@ -39,7 +39,7 @@ const storeAuthInfo = (authToken, dispatch) => {
     saveAuthToken(authToken);
 };
 
-export const login = (username, password) => dispatch => {
+export const login = (email, password) => dispatch => {
     dispatch(authRequest());
     return (
         fetch(`${API_BASE_URL}/login`, {
@@ -48,7 +48,7 @@ export const login = (username, password) => dispatch => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                username,
+                email,
                 password
             })
         })
@@ -59,7 +59,7 @@ export const login = (username, password) => dispatch => {
                 const { code } = err;
                 const message =
                     code === 401
-                        ? 'Incorrect username or password'
+                        ? 'Incorrect email or password'
                         : 'Unable to login, please try again';
                 dispatch(authError(err));
                 return Promise.reject(

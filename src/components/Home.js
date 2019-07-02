@@ -1,18 +1,27 @@
 import React from 'react';
-// import Login from './Login'
-// import Register from './Register';
-// import NavBar from './NavBar';
-// import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import Login from './Login';
 
-export default class Home extends React.Component {
-  render() {
-    return (
-      <div>
-        <h3>Welcome to Goodnest my user friend</h3>
-      </div>
-    )
+export function Home(props) {
+  if (props.loggedIn) {
+    return <Redirect to="/dashboard" />
   }
+
+  return (
+    <div className="home">
+      <h3>Welcome to Goodnest my user friend</h3>
+      <Login />
+      <Link to="/register">Register</Link>
+    </div>
+  )
 }
+
+const mapStatetoProps = state => ({
+  loggedIn: state.auth.currentUser != null
+});
+
+export default connect(mapStatetoProps)(Home);
 
 //* <Switch <Route exact path="/login" component={Login} />
 //<Route exact path="/register" component={Register} />
