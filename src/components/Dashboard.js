@@ -4,6 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import RequiresLogin from './RequiresLogin';
 import { fetchProtectedData } from '../actions/data';
+import { Quote } from './Quote';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -13,12 +14,9 @@ export class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard">
-        <div className="dashboard-email">
-          Email: {this.props.email}
-        </div>
-        <div className="dashboard-name">Name: {this.props.name}</div>
+        <div className="dashboard-name">Hello: {this.props.name}</div>
         <div className="dashboard-protected-data">
-          Protected data: {this.props.protectedData}
+          <Quote />
         </div>
       </div>
     );

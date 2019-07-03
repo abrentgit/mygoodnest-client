@@ -7,9 +7,12 @@ import {
     GET_MY_ENTRIES_ERROR,
     DELETE_ENTRY_SUCCESS,
     DELETE_ENTRY_ERROR,
-    GET_QUOTE_SUCCESS,
-    GET_QUOTE_ERROR
-} from '../actions/data';
+} from '../actions/entry';
+
+import {
+    FETCH_QUOTE_SUCCESS,
+    FETCH_QUOTE_ERROR,
+} from '../actions/quote';
 
 const initialState = {
     entries: [],
@@ -59,12 +62,12 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             error: action.error
         });
-    } else if (action.type === GET_QUOTE_SUCCESS) {
+    } else if (action.type === FETCH_QUOTE_SUCCESS) {
         return Object.assign({}, state, {
             quotes: action.data,
             error: null
         });
-    } else if (action.type === GET_QUOTE_ERROR) {
+    } else if (action.type === FETCH_QUOTE_ERROR) {
         return Object.assign({}, state, {
             error: action.error
         });

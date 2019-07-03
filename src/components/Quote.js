@@ -1,12 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
+// import { getQuotes } from '../actions/quote'
 
-const Quote = () => {
-    return (
-        <div className="quote-container">
-            <h3>Positive Saying of the day.</h3>
-            <p>Every day is a good day.</p>
-        </div>
-    )
+export class Quote extends React.Component {
+    render() {
+        console.log('quote', this.props.quotes)
+        const singleQuote = this.props.quotes;
+        return (
+            <div className="quote-container">
+                <h2>{singleQuote}</h2>
+            </div>
+        )
+    }
 }
 
-export default Quote;
+const mapStatetoProps = state => ({
+    quotes: state.quotes,
+    loading: state.loading,
+    error: state.error
+})
+
+export default connect(mapStatetoProps(Quote));
